@@ -39,7 +39,7 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `usuario`, `clave`) VALUES
 (1, 'admin', '1234'),
-(2, 'jpabon', '1234'),
+(2, 'iptdevs', '123456'),
 (3, 'pperez', '1234'),
 (5, 'kincapie', '4321'),
 (6, 'ccontreras', '1234'),
