@@ -30,7 +30,7 @@ router.post('/login', async (req, res) => {
         req.session.rol = rows[0].rol;
 
         res.json({ logueado: true, perfil: rows[0] });
-
+        
     } catch (error) {
         console.error('LOGIN ERROR:', error);
         res.status(500).json({ error: 'Error interno del servidor' });
