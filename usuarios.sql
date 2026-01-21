@@ -69,7 +69,10 @@ INSERT INTO `usuarios` (`id`, `usuario`, `clave`) VALUES
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD COLUMN nombre VARCHAR(100),
+  ADD COLUMN rol VARCHAR(20) DEFAULT 'USUARIO',
+  ADD COLUMN avatar VARCHAR(255);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
