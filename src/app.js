@@ -6,19 +6,8 @@ import cors from 'cors';
 
 import session from 'express-session';
 
-import 'dotenv/config';
-
-import express from 'express';
-
-import cors from 'cors';
-
-import session from 'express-session';
-
-import { errorHandler } from './middleware/error.middleware.js';
 import { errorHandler } from './middleware/error.middleware.js';
 import authRoutes from './routes/auth.routes.js';
-import authRoutes from './routes/auth.routes.js';
-import usersRoutes from './routes/user.routes.js';
 import usersRoutes from './routes/user.routes.js';
 
 const app = express();
