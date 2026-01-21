@@ -13,8 +13,19 @@ import usersRoutes from './routes/user.routes.js';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const allowedOrigins = [
+    'http://localhost:4200',
+    'https://pokedexaplication.netlify.app'
+];
+
 app.use(cors({
-    origin: 'https://pokedexaplication.netlify.app',
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true
 }));
 
@@ -27,8 +38,8 @@ app.use(session({
     saveUninitialized: false,
     cookie: {
         httpOnly: true,
-        secure: true,        // OBLIGATORIO en Back-end desplegado (HTTPS)
-        sameSite: 'none',    // OBLIGATORIO Front-end desplegado y Back-end desplegado
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
         maxAge: 1000 * 60 * 60
     }
 }));
