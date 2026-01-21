@@ -44,15 +44,3 @@ app.use(errorHandler);
 app.listen(PORT, () => {
     console.log(`Backend corriendo en puerto ${PORT}`);
 });
-
-app.use('/api/auth', authRoutes);
-app.use('/api/usuarios', usersRoutes);
-
-app.get('/', (_req, res) => res.send('API Pokedex OK'));
-app.get('/health', (_req, res) => res.json({ ok: true }));
-
-app.use(errorHandler);
-
-app.listen(PORT, () => {
-    console.log(`Backend corriendo en puerto ${PORT}`);
-});
