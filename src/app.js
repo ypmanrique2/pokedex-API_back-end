@@ -27,8 +27,8 @@ app.use(session({
     saveUninitialized: false,
     cookie: {
         httpOnly: true,
-        sameSite: 'none', // necesario para Front-end desplegado
-        secure: process.env.NODE_ENV === 'production'
+        secure: true,
+        sameSite: 'none'
     }
 }));
 
